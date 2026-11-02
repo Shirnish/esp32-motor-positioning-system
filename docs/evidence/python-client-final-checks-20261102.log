@@ -1,0 +1,133 @@
+Date: 2026-11-02 (America/New_York)
+Checkpoint: first Python STATUS logging client complete
+Source: <project>\pc\status_client.py
+Source SHA256: A11230581CCADBA2F78901FCE695D2CA354DBD89A8627CBA1A2BC6DF7B4520B4
+Scope: First Python STATUS logging client: bounded sampling, timestamps, CSV export/readback and validation
+
+Syntax and requested cleanup checks: PASS
+Offline/simulated combined result: 58/58 PASS
+Check groups: {"Protocol parser": 11, "CSV loading": 14, "Batch validation": 21, "Integrated workflow": 12}
+
+Recorder provenance:
+My initial run passed 53 cases, but five workflow cases were interrupted by
+the recorder trying to deepcopy Python 3.14 FrameLocalsProxy objects.
+I changed only the recorder to copy the records/expected_count arguments and
+reran those five. All passed. The source was unchanged throughout.
+The 58-case total deduplicates the five reruns; it does not count them twice.
+
+Named final cases:
+PASS: protocol accepts IDLE
+PASS: protocol accepts MOVING
+PASS: protocol accepts HOMING
+PASS: protocol rejects wrong prefix
+PASS: protocol rejects missing field
+PASS: protocol rejects extra field
+PASS: protocol rejects wrong key
+PASS: protocol rejects duplicate key
+PASS: protocol rejects bad integer
+PASS: protocol rejects bad homed
+PASS: protocol rejects bad mode
+PASS: CSV returns typed rows
+PASS: CSV rejects missing heading
+PASS: CSV rejects extra heading
+PASS: CSV rejects duplicate heading
+PASS: CSV rejects reordered headings
+PASS: CSV rejects empty file
+PASS: CSV rejects extra row cell
+PASS: CSV rejects missing row cells
+PASS: CSV rejects empty numeric cell
+PASS: CSV rejects bad integer
+PASS: CSV rejects bad float
+PASS: CSV rejects bad boolean
+PASS: CSV rejects empty boolean
+PASS: CSV rejects bad mode
+PASS: valid batch accepted
+PASS: batch rejects empty count
+PASS: batch rejects short count
+PASS: batch rejects long count
+PASS: batch rejects non-dictionary
+PASS: batch rejects wrong fields
+PASS: batch rejects sample text
+PASS: batch rejects elapsed text
+PASS: batch rejects position text
+PASS: batch rejects homed text
+PASS: batch rejects bad mode
+PASS: batch rejects duplicate number
+PASS: batch rejects skipped number
+PASS: batch rejects reordered number
+PASS: batch rejects negative time
+PASS: batch rejects NaN time
+PASS: batch rejects positive infinity
+PASS: batch rejects negative infinity
+PASS: batch rejects equal times
+PASS: batch rejects decreasing time
+PASS: batch resets previous time between calls; single zero accepted
+PASS: integrated import guard
+PASS: integrated normal
+PASS: integrated open failure
+PASS: integrated third write failure
+PASS: integrated response timeout
+PASS: integrated malformed reply
+PASS: integrated CSV write denied
+PASS: integrated CSV read denied
+PASS: integrated truncated CSV
+PASS: integrated duplicate CSV sample
+PASS: integrated nonfinite CSV time
+PASS: integrated equal CSV time
+
+Offline methodology:
+I compiled the complete saved source, executed its helper definitions for
+protocol/CSV/batch checks, and executed actual functions and the entry-point
+handler for integrated scenarios. Integrated cases used fake serial/time,
+the installed pySerial exception class, and real temporary CSV files.
+Normal simulation included Ready/echo filtering, mixed firmware states,
+typed rows, expected count/numbering/times, and serial closure before file I/O.
+Failure cases tested opening, third-query writing, timeout, parse errors,
+file permissions, and deliberately altered CSV content.
+Import guarding, closure, errors, and retained saved files were checked.
+All temporary review paths were verified inside owned PC-project review
+directories and removed. No physical serial connection was opened by those cases.
+
+Direct hardware run:
+Interpreter: <project>\pc\.venv\Scripts\python.exe
+Working directory: <VS Code working directory>
+Process exit code: 0
+Host-measured process duration seconds: 7.1547508999938145
+
+stdout:
+COM3
+True
+1 {'position': 0, 'homed': False, 'mode': 'IDLE'} 0.0071721000131219625
+2 {'position': 0, 'homed': False, 'mode': 'IDLE'} 1.01394800003618
+3 {'position': 0, 'homed': False, 'mode': 'IDLE'} 2.0211596000008285
+4 {'position': 0, 'homed': False, 'mode': 'IDLE'} 3.0281007000012323
+5 {'position': 0, 'homed': False, 'mode': 'IDLE'} 4.035413600038737
+5
+False
+<project>\pc\logs\status_1793651969374685400.csv
+Loaded 5 records
+
+stderr:
+(empty)
+
+Final CSV: <project>\pc\logs\status_1793651969374685400.csv
+CSV SHA256: 08B07BBB6926306D314FCE0DD97E61986CC49D621DA24C7198F9C9A97FFC2741
+CSV content:
+sample,elapsed_s,position,homed,mode
+1,0.0071721000131219625,0,False,IDLE
+2,1.01394800003618,0,False,IDLE
+3,2.0211596000008285,0,False,IDLE
+4,3.0281007000012323,0,False,IDLE
+5,4.035413600038737,0,False,IDLE
+
+Independent verification:
+Five exact console/CSV matches; exact typed readback; expected count, consecutive numbering, finite/nonnegative/increasing times; serial closed; exit 0; script-relative path; source unchanged
+I also loaded the final CSV through the saved helper and reran validate_records
+after importing with a non-main name, without opening another serial port.
+Exact values and int/float/int/bool/str types matched the console records.
+
+Physical observation: Not recorded; STATUS queries only
+Positions remain firmware-commanded estimates.
+Source and final CSV stayed unchanged during checks and documentation.
+Result: PASS - first Python STATUS logging client complete.
+Mechanical construction and physical homing measurements remain separate work.

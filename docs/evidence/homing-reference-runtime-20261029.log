@@ -1,0 +1,13 @@
+19:25:36.150 -> Received: HOME
+19:25:36.150 -> Homing requested
+19:25:36.568 -> Home switch is pressed
+19:25:36.568 -> Homing Complete
+19:25:36.568 -> 0
+19:25:36.790 -> Home switch is unpressed
+19:25:49.530 -> Received: 9
+19:25:49.530 -> Within target Range
+19:25:49.530 -> Movement scheduled
+19:25:49.577 -> 9
+19:25:53.531 -> Home switch is pressed
+19:25:53.531 -> 9
+19:25:53.715 -> Home switch is unpressed

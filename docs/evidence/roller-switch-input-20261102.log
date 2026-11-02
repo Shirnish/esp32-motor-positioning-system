@@ -1,0 +1,28 @@
+Date: 2026-11-02 (America/New_York)
+Checkpoint: first new roller-switch input cycle
+Evidence: reported serial output after pressing/releasing the new switch
+Saved firmware SHA256: 1041603DC5231FD58D3A8EF158DDCE575589C5BE813FC58740D2B34872B3FB90
+The saved-source hash is not independent proof of the flashed binary.
+
+Reported excerpt:
+17:26:26.898 -> Ready
+17:26:37.515 -> Home switch is pressed
+17:26:37.515 -> 0
+17:26:37.733 -> Home switch is unpressed.
+
+Context:
+I supplied this excerpt after pressing the switch. The test instructions called
+for USB-only operation with the motor supply disconnected; the supply state
+was not independently observed in this report.
+
+Interpretation:
+One press/release reporting cycle passed.
+The saved source uses GPIO14 with INPUT_PULLUP and LOW=pressed.
+The zero is the commanded count printed by the idle stop handler.
+There is no HOME request or Homing Complete message in this excerpt.
+This does not establish a physical home reference.
+
+Result: PASS - one reported input cycle through the used connection path.
+A complete adapter continuity map, repeated-cycle testing, shaft-driven
+activation, mounted fit, and mechanical repeatability remain separate checks.
+No firmware or Python edits were made.

@@ -1,0 +1,25 @@
+14:55:38.890 -> Ready
+14:55:44.895 -> Received: 0
+14:55:44.895 -> Home First
+14:55:44.895 -> 0
+14:55:46.246 -> Received: 9
+14:55:46.246 -> Home First
+14:55:46.246 -> 0
+14:56:08.258 -> Received: HOME
+14:56:36.006 -> Homing requested
+14:56:36.564 -> Home switch is pressed
+14:56:36.564 -> Homing Complete
+14:56:36.564 -> 0
+14:56:36.767 -> Home switch is unpressed
+14:56:52.641 -> Received: 9
+14:56:52.641 -> Within target Range
+14:56:52.641 -> Movement scheduled
+14:56:52.718 -> 9
+14:57:20.643 -> Received: HOME
+14:57:20.643 -> Homing requested
+14:57:21.407 -> Received: STOP
+14:57:21.407 -> Stopped
+14:57:21.407 -> -67
+14:57:26.129 -> Received: 9
+14:57:26.129 -> Home First
+14:57:26.129 -> -67

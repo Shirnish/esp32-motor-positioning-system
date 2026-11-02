@@ -1,0 +1,386 @@
+{
+  "date": "2026-11-02",
+  "timezone": "America/New_York",
+  "scope": "First Python STATUS logging client: bounded sampling, timestamps, CSV export/readback and validation",
+  "combined": {
+    "source_sha256": "A11230581CCADBA2F78901FCE695D2CA354DBD89A8627CBA1A2BC6DF7B4520B4",
+    "total_cases": 58,
+    "passed": 58,
+    "failed": 0,
+    "cases": [
+      {
+        "name": "protocol accepts IDLE",
+        "result": "PASS"
+      },
+      {
+        "name": "protocol accepts MOVING",
+        "result": "PASS"
+      },
+      {
+        "name": "protocol accepts HOMING",
+        "result": "PASS"
+      },
+      {
+        "name": "protocol rejects wrong prefix",
+        "result": "PASS"
+      },
+      {
+        "name": "protocol rejects missing field",
+        "result": "PASS"
+      },
+      {
+        "name": "protocol rejects extra field",
+        "result": "PASS"
+      },
+      {
+        "name": "protocol rejects wrong key",
+        "result": "PASS"
+      },
+      {
+        "name": "protocol rejects duplicate key",
+        "result": "PASS"
+      },
+      {
+        "name": "protocol rejects bad integer",
+        "result": "PASS"
+      },
+      {
+        "name": "protocol rejects bad homed",
+        "result": "PASS"
+      },
+      {
+        "name": "protocol rejects bad mode",
+        "result": "PASS"
+      },
+      {
+        "name": "CSV returns typed rows",
+        "result": "PASS"
+      },
+      {
+        "name": "CSV rejects missing heading",
+        "result": "PASS"
+      },
+      {
+        "name": "CSV rejects extra heading",
+        "result": "PASS"
+      },
+      {
+        "name": "CSV rejects duplicate heading",
+        "result": "PASS"
+      },
+      {
+        "name": "CSV rejects reordered headings",
+        "result": "PASS"
+      },
+      {
+        "name": "CSV rejects empty file",
+        "result": "PASS"
+      },
+      {
+        "name": "CSV rejects extra row cell",
+        "result": "PASS"
+      },
+      {
+        "name": "CSV rejects missing row cells",
+        "result": "PASS"
+      },
+      {
+        "name": "CSV rejects empty numeric cell",
+        "result": "PASS"
+      },
+      {
+        "name": "CSV rejects bad integer",
+        "result": "PASS"
+      },
+      {
+        "name": "CSV rejects bad float",
+        "result": "PASS"
+      },
+      {
+        "name": "CSV rejects bad boolean",
+        "result": "PASS"
+      },
+      {
+        "name": "CSV rejects empty boolean",
+        "result": "PASS"
+      },
+      {
+        "name": "CSV rejects bad mode",
+        "result": "PASS"
+      },
+      {
+        "name": "valid batch accepted",
+        "result": "PASS"
+      },
+      {
+        "name": "batch rejects empty count",
+        "result": "PASS"
+      },
+      {
+        "name": "batch rejects short count",
+        "result": "PASS"
+      },
+      {
+        "name": "batch rejects long count",
+        "result": "PASS"
+      },
+      {
+        "name": "batch rejects non-dictionary",
+        "result": "PASS"
+      },
+      {
+        "name": "batch rejects wrong fields",
+        "result": "PASS"
+      },
+      {
+        "name": "batch rejects sample text",
+        "result": "PASS"
+      },
+      {
+        "name": "batch rejects elapsed text",
+        "result": "PASS"
+      },
+      {
+        "name": "batch rejects position text",
+        "result": "PASS"
+      },
+      {
+        "name": "batch rejects homed text",
+        "result": "PASS"
+      },
+      {
+        "name": "batch rejects bad mode",
+        "result": "PASS"
+      },
+      {
+        "name": "batch rejects duplicate number",
+        "result": "PASS"
+      },
+      {
+        "name": "batch rejects skipped number",
+        "result": "PASS"
+      },
+      {
+        "name": "batch rejects reordered number",
+        "result": "PASS"
+      },
+      {
+        "name": "batch rejects negative time",
+        "result": "PASS"
+      },
+      {
+        "name": "batch rejects NaN time",
+        "result": "PASS"
+      },
+      {
+        "name": "batch rejects positive infinity",
+        "result": "PASS"
+      },
+      {
+        "name": "batch rejects negative infinity",
+        "result": "PASS"
+      },
+      {
+        "name": "batch rejects equal times",
+        "result": "PASS"
+      },
+      {
+        "name": "batch rejects decreasing time",
+        "result": "PASS"
+      },
+      {
+        "name": "batch resets previous time between calls; single zero accepted",
+        "result": "PASS"
+      },
+      {
+        "name": "integrated import guard",
+        "result": "PASS"
+      },
+      {
+        "name": "integrated normal",
+        "result": "PASS",
+        "exit_code": 0,
+        "final_output": "Loaded 5 records"
+      },
+      {
+        "name": "integrated open failure",
+        "result": "PASS"
+      },
+      {
+        "name": "integrated third write failure",
+        "result": "PASS"
+      },
+      {
+        "name": "integrated response timeout",
+        "result": "PASS"
+      },
+      {
+        "name": "integrated malformed reply",
+        "result": "PASS"
+      },
+      {
+        "name": "integrated CSV write denied",
+        "result": "PASS"
+      },
+      {
+        "name": "integrated CSV read denied",
+        "result": "PASS"
+      },
+      {
+        "name": "integrated truncated CSV",
+        "result": "PASS",
+        "exit_code": 1,
+        "final_output": "Error: Expected 5 records, got 4"
+      },
+      {
+        "name": "integrated duplicate CSV sample",
+        "result": "PASS",
+        "exit_code": 1,
+        "final_output": "Error: Expected sample 3, got 2"
+      },
+      {
+        "name": "integrated nonfinite CSV time",
+        "result": "PASS",
+        "exit_code": 1,
+        "final_output": "Error: Elapsed_s field is not a non-negative finite float"
+      },
+      {
+        "name": "integrated equal CSV time",
+        "result": "PASS",
+        "exit_code": 1,
+        "final_output": "Error: Elapsed times must increase"
+      }
+    ],
+    "syntax_and_cleanup": "PASS",
+    "scope": "Final saved source; pure helper cases and actual entry-point simulations with real temporary CSV files and fake serial/time. No physical serial connection opened.",
+    "temporary_files_removed": true,
+    "source_unchanged": true,
+    "recorder_correction": "Copy only records and expected_count from frame.f_locals; do not deepcopy Python 3.14 FrameLocalsProxy"
+  },
+  "initial_recorder": {
+    "passed": 53,
+    "instrumentation_blocked": [
+      {
+        "name": "integrated normal",
+        "result": "FAIL",
+        "detail": "TypeError: cannot pickle 'FrameLocalsProxy' object"
+      },
+      {
+        "name": "integrated truncated CSV",
+        "result": "FAIL",
+        "detail": "TypeError: cannot pickle 'FrameLocalsProxy' object"
+      },
+      {
+        "name": "integrated duplicate CSV sample",
+        "result": "FAIL",
+        "detail": "TypeError: cannot pickle 'FrameLocalsProxy' object"
+      },
+      {
+        "name": "integrated nonfinite CSV time",
+        "result": "FAIL",
+        "detail": "TypeError: cannot pickle 'FrameLocalsProxy' object"
+      },
+      {
+        "name": "integrated equal CSV time",
+        "result": "FAIL",
+        "detail": "TypeError: cannot pickle 'FrameLocalsProxy' object"
+      }
+    ],
+    "source_unchanged": true,
+    "temporary_files_removed": true
+  },
+  "corrected_recorder_rerun": {
+    "source_sha256": "A11230581CCADBA2F78901FCE695D2CA354DBD89A8627CBA1A2BC6DF7B4520B4",
+    "recorder_correction": "Copy only records and expected_count from frame.f_locals; do not deepcopy Python 3.14 FrameLocalsProxy",
+    "total_cases": 5,
+    "passed": 5,
+    "failed": 0,
+    "cases": [
+      {
+        "name": "integrated normal",
+        "result": "PASS",
+        "exit_code": 0,
+        "final_output": "Loaded 5 records"
+      },
+      {
+        "name": "integrated truncated CSV",
+        "result": "PASS",
+        "exit_code": 1,
+        "final_output": "Error: Expected 5 records, got 4"
+      },
+      {
+        "name": "integrated duplicate CSV sample",
+        "result": "PASS",
+        "exit_code": 1,
+        "final_output": "Error: Expected sample 3, got 2"
+      },
+      {
+        "name": "integrated nonfinite CSV time",
+        "result": "PASS",
+        "exit_code": 1,
+        "final_output": "Error: Elapsed_s field is not a non-negative finite float"
+      },
+      {
+        "name": "integrated equal CSV time",
+        "result": "PASS",
+        "exit_code": 1,
+        "final_output": "Error: Elapsed times must increase"
+      }
+    ],
+    "temporary_files_removed": true,
+    "source_unchanged": true,
+    "scope": "Five previously instrumentation-blocked workflow cases rerun; actual entry point and file I/O, fake serial/time; no physical connection."
+  },
+  "hardware": {
+    "source_sha256": "A11230581CCADBA2F78901FCE695D2CA354DBD89A8627CBA1A2BC6DF7B4520B4",
+    "interpreter": "<project>\\pc\\.venv\\Scripts\\python.exe",
+    "working_directory": "<VS Code working directory>",
+    "process_exit_code": 0,
+    "duration_s": 7.1547508999938145,
+    "stdout": "COM3\nTrue\n1 {'position': 0, 'homed': False, 'mode': 'IDLE'} 0.0071721000131219625\n2 {'position': 0, 'homed': False, 'mode': 'IDLE'} 1.01394800003618\n3 {'position': 0, 'homed': False, 'mode': 'IDLE'} 2.0211596000008285\n4 {'position': 0, 'homed': False, 'mode': 'IDLE'} 3.0281007000012323\n5 {'position': 0, 'homed': False, 'mode': 'IDLE'} 4.035413600038737\n5\nFalse\n<project>\\pc\\logs\\status_1793651969374685400.csv\nLoaded 5 records\n",
+    "stderr": "",
+    "result": "PASS",
+    "csv_path": "<project>\\pc\\logs\\status_1793651969374685400.csv",
+    "csv_sha256": "08B07BBB6926306D314FCE0DD97E61986CC49D621DA24C7198F9C9A97FFC2741",
+    "csv_text": "sample,elapsed_s,position,homed,mode\n1,0.0071721000131219625,0,False,IDLE\n2,1.01394800003618,0,False,IDLE\n3,2.0211596000008285,0,False,IDLE\n4,3.0281007000012323,0,False,IDLE\n5,4.035413600038737,0,False,IDLE\n",
+    "loaded_records": [
+      {
+        "sample": 1,
+        "elapsed_s": 0.0071721000131219625,
+        "position": 0,
+        "homed": false,
+        "mode": "IDLE"
+      },
+      {
+        "sample": 2,
+        "elapsed_s": 1.01394800003618,
+        "position": 0,
+        "homed": false,
+        "mode": "IDLE"
+      },
+      {
+        "sample": 3,
+        "elapsed_s": 2.0211596000008285,
+        "position": 0,
+        "homed": false,
+        "mode": "IDLE"
+      },
+      {
+        "sample": 4,
+        "elapsed_s": 3.0281007000012323,
+        "position": 0,
+        "homed": false,
+        "mode": "IDLE"
+      },
+      {
+        "sample": 5,
+        "elapsed_s": 4.035413600038737,
+        "position": 0,
+        "homed": false,
+        "mode": "IDLE"
+      }
+    ],
+    "verification": "Five exact console/CSV matches; exact typed readback; expected count, consecutive numbering, finite/nonnegative/increasing times; serial closed; exit 0; script-relative path; source unchanged",
+    "physical_observation": "Not recorded; STATUS queries only"
+  }
+}

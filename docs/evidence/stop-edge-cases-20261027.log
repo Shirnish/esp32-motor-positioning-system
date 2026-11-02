@@ -1,0 +1,18 @@
+13:45:08.194 -> No Movement
+13:45:08.194 -> 0
+13:45:09.397 -> Received: STOP
+13:45:09.397 -> Stopped
+13:45:09.397 -> 0
+13:45:09.978 -> Received: STOP
+13:45:09.978 -> Stopped
+13:45:09.978 -> 0
+13:45:15.506 -> Received: 1024
+13:45:15.506 -> Within target Range
+13:45:15.506 -> Movement scheduled
+13:45:20.620 -> 1024
+13:45:31.706 -> Received: 0
+13:45:31.706 -> Within target Range
+13:45:31.706 -> Movement scheduled
+13:45:32.706 -> Received: STOP
+13:45:32.706 -> Stopped
+13:45:32.706 -> 823

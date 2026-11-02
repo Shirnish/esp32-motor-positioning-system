@@ -1,0 +1,8 @@
+#Local Python environment and generated files
+pc/.venv/
+__pycache__/
+*.pyc
+pc/logs/
+.vscode/
+.env
+.env.*

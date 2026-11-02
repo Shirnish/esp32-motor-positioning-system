@@ -1,0 +1,6 @@
+18:44:18.388 -> Received: HOME
+18:44:18.388 -> Homing requested
+18:44:20.964 -> Homing step limit reached
+18:44:29.251 -> Received: STOP
+18:44:29.251 -> Stopped
+18:44:29.251 -> -256

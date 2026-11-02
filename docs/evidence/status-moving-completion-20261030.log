@@ -1,0 +1,19 @@
+19:06:28.925 -> Received: HOME
+19:06:28.925 -> Homing requested
+19:06:29.615 -> Home switch is pressed
+19:06:29.615 -> Homing Complete
+19:06:29.615 -> 0
+19:06:29.780 -> Home switch is unpressed
+19:06:37.147 -> Received: STATUS
+19:06:37.147 -> STATUS position=0 homed=1 mode=IDLE
+19:06:56.373 -> Received: 1024
+19:06:56.373 -> Within target Range
+19:06:56.373 -> Movement scheduled
+19:06:57.839 -> Received: STATUS
+19:06:57.839 -> STATUS position=294 homed=1 mode=MOVING
+19:07:01.482 -> 1024
+19:07:05.524 -> Received: 1024
+19:07:05.524 -> No Movement
+19:07:05.524 -> 1024
+19:07:08.540 -> Received: STATUS
+19:07:08.540 -> STATUS position=1024 homed=1 mode=IDLE

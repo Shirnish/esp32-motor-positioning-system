@@ -1,0 +1,17 @@
+{
+  "date": "2026-11-02",
+  "scope": "Comments only; no hardware commands issued",
+  "cpp_noncomment_tokens_identical": true,
+  "python_ast_identical": true,
+  "arduino_comment_format_no_space": true,
+  "sources": {
+    "Motor_Positioning_System.ino": {
+      "before_sha256_normalized_lf": "1041603dc5231fd58d3a8ef158ddce575589c5be813fc58740d2b34872b3fb90",
+      "after_sha256": "f0e0e3b27a6acb67ff23596668558ca7fb0c677ca27e074ab09571e5b3acd224"
+    },
+    "pc/status_client.py": {
+      "before_sha256_normalized_lf": "a11230581ccadba2f78901fce695d2ca354dbd89a8627cba1a2bc6df7b4520b4",
+      "after_sha256": "22acec033deda77f1808ac4619470a02bc8236e4389ff71d4e088f47bfebcd0b"
+    }
+  }
+}
