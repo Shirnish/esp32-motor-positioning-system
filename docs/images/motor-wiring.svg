@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1050" viewBox="0 0 1600 1050" role="img" aria-labelledby="title desc">
+<title id="title">ESP32-S3 motor positioner wiring</title>
+<desc id="desc">GPIO1, GPIO2, GPIO42 and GPIO41 connect to ULN2003 IN1 to IN4. GPIO14 connects to the switch normally open contact. USB powers the controller. An external nominal 5 volt supply powers the driver. All grounds and switch COM are common.</desc>
+<rect width="1600" height="1050" fill="#ffffff"/>
+<g font-family="Segoe UI, Arial, sans-serif" fill="#17283a">
+<text x="60" y="58" font-size="36" font-weight="700" text-anchor="start" fill="#17283a">ESP32-S3 motor positioner — wiring</text>
+<text x="60" y="96" font-size="20" font-weight="400" text-anchor="start" fill="#516177">Final prototype connections • GPIO numbers match the saved firmware • November 10, 2026</text>
+<rect x="60" y="125" width="350" height="70" rx="14" fill="#e9f0fc" stroke="#7c8da1" stroke-width="2"/>
+<text x="85" y="155" font-size="23" font-weight="650" text-anchor="start" fill="#17283a">Computer USB</text>
+<text x="85" y="182" font-size="17" font-weight="400" text-anchor="start" fill="#17283a">Controller power + serial (115200 baud)</text>
+<polyline points="230,195 230,230" fill="none" stroke="#476589" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="60" y="230" width="350" height="410" rx="14" fill="#f4f7fb" stroke="#7c8da1" stroke-width="2"/>
+<text x="85" y="270" font-size="25" font-weight="700" text-anchor="start" fill="#17283a">Freenove ESP32-S3</text>
+<text x="85" y="296" font-size="18" font-weight="400" text-anchor="start" fill="#516177">3.3 V GPIO logic</text>
+<rect x="720" y="230" width="350" height="410" rx="14" fill="#f4f7fb" stroke="#7c8da1" stroke-width="2"/>
+<text x="745" y="270" font-size="25" font-weight="700" text-anchor="start" fill="#17283a">ULN2003AN driver board</text>
+<text x="745" y="296" font-size="17" font-weight="400" text-anchor="start" fill="#516177">Motor plugs into its 5-pin socket</text>
+<text x="390" y="320" font-size="21" font-weight="600" text-anchor="end" fill="#17283a">GPIO1</text>
+<text x="740" y="320" font-size="21" font-weight="600" text-anchor="start" fill="#17283a">IN1</text>
+<polyline points="410,330 720,330" fill="none" stroke="#2563eb" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="410" cy="330" r="6" fill="#2563eb"/>
+<circle cx="720" cy="330" r="6" fill="#2563eb"/>
+<text x="390" y="370" font-size="21" font-weight="600" text-anchor="end" fill="#17283a">GPIO2</text>
+<text x="740" y="370" font-size="21" font-weight="600" text-anchor="start" fill="#17283a">IN2</text>
+<polyline points="410,380 720,380" fill="none" stroke="#7c3aed" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="410" cy="380" r="6" fill="#7c3aed"/>
+<circle cx="720" cy="380" r="6" fill="#7c3aed"/>
+<text x="390" y="420" font-size="21" font-weight="600" text-anchor="end" fill="#17283a">GPIO42</text>
+<text x="740" y="420" font-size="21" font-weight="600" text-anchor="start" fill="#17283a">IN3</text>
+<polyline points="410,430 720,430" fill="none" stroke="#e27809" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="410" cy="430" r="6" fill="#e27809"/>
+<circle cx="720" cy="430" r="6" fill="#e27809"/>
+<text x="390" y="470" font-size="21" font-weight="600" text-anchor="end" fill="#17283a">GPIO41</text>
+<text x="740" y="470" font-size="21" font-weight="600" text-anchor="start" fill="#17283a">IN4</text>
+<polyline points="410,480 720,480" fill="none" stroke="#16826c" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="410" cy="480" r="6" fill="#16826c"/>
+<circle cx="720" cy="480" r="6" fill="#16826c"/>
+<text x="85" y="555" font-size="19" font-weight="600" text-anchor="start" fill="#17283a">GPIO14 uses INPUT_PULLUP</text>
+<text x="85" y="584" font-size="18" font-weight="400" text-anchor="start" fill="#17283a">Released = HIGH; pressed = LOW</text>
+<text x="110" y="622" font-size="20" font-weight="650" text-anchor="middle" fill="#17283a">GND</text>
+<text x="230" y="622" font-size="20" font-weight="650" text-anchor="middle" fill="#17283a">GPIO14</text>
+<circle cx="110" cy="640" r="6" fill="#18212c"/>
+<circle cx="230" cy="640" r="6" fill="#0f8a9e"/>
+<text x="800" y="622" font-size="20" font-weight="650" text-anchor="middle" fill="#17283a">GND / −</text>
+<text x="1045" y="622" font-size="20" font-weight="650" text-anchor="end" fill="#17283a">Driver + / 5 V</text>
+<circle cx="800" cy="640" r="6" fill="#18212c"/>
+<circle cx="1020" cy="640" r="6" fill="#ca2c35"/>
+<rect x="1250" y="260" width="280" height="210" rx="14" fill="#f0f6ed" stroke="#7c8da1" stroke-width="2"/>
+<text x="1275" y="305" font-size="28" font-weight="700" text-anchor="start" fill="#17283a">28BYJ-48</text>
+<text x="1275" y="340" font-size="22" font-weight="600" text-anchor="start" fill="#17283a">DC 5 V stepper</text>
+<text x="1275" y="390" font-size="19" font-weight="400" text-anchor="start" fill="#17283a">Use the keyed</text>
+<text x="1275" y="420" font-size="19" font-weight="400" text-anchor="start" fill="#17283a">5-wire motor plug</text>
+<polyline points="1070,360 1250,360" fill="none" stroke="#5f6b7c" stroke-width="8" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="1070" cy="360" r="6" fill="#5f6b7c"/>
+<circle cx="1250" cy="360" r="6" fill="#5f6b7c"/>
+<text x="1160" y="330" font-size="18" font-weight="600" text-anchor="middle" fill="#17283a">5-wire cable</text>
+<polyline points="110,640 30,640 30,910" fill="none" stroke="#18212c" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="230,640 230,680 520,680 520,720" fill="none" stroke="#0f8a9e" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="60" y="720" width="570" height="135" rx="14" fill="#edf8f9" stroke="#7c8da1" stroke-width="2"/>
+<text x="85" y="750" font-size="23" font-weight="650" text-anchor="start" fill="#17283a">Home roller switch — dry contact</text>
+<text x="85" y="778" font-size="17" font-weight="400" text-anchor="start" fill="#516177">Pressing connects NO to COM</text>
+<polyline points="110,855 110,810 300,810" fill="none" stroke="#18212c" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="300" cy="810" r="6" fill="#18212c"/>
+<polyline points="300,810 390,785" fill="none" stroke="#18212c" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="410" cy="810" r="6" fill="#18212c"/>
+<polyline points="410,810 520,810 520,720" fill="none" stroke="#0f8a9e" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="520" cy="720" r="6" fill="#0f8a9e"/>
+<text x="535" y="778" font-size="18" font-weight="650" text-anchor="end" fill="#17283a">NO / blue</text>
+<text x="125" y="840" font-size="18" font-weight="650" text-anchor="start" fill="#17283a">COM / black</text>
+<text x="370" y="842" font-size="16" font-weight="400" text-anchor="start" fill="#66758a">NC / gray: insulated, unused</text>
+<polyline points="110,855 110,910" fill="none" stroke="#18212c" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="110" cy="855" r="6" fill="#18212c"/>
+<rect x="1180" y="650" width="350" height="175" rx="14" fill="#fff1f0" stroke="#7c8da1" stroke-width="2"/>
+<text x="1200" y="685" font-size="24" font-weight="700" text-anchor="start" fill="#17283a">External motor supply</text>
+<text x="1200" y="717" font-size="24" font-weight="700" text-anchor="start" fill="#ca2c35">+</text>
+<text x="1230" y="717" font-size="20" font-weight="650" text-anchor="start" fill="#17283a">Nominal 5 V DC</text>
+<text x="1200" y="772" font-size="24" font-weight="700" text-anchor="start" fill="#17283a">−</text>
+<text x="1230" y="772" font-size="18" font-weight="400" text-anchor="start" fill="#17283a">Supply negative / GND</text>
+<text x="1200" y="805" font-size="16" font-weight="400" text-anchor="start" fill="#516177">5 V / 3 A adapter + barrel terminals</text>
+<polyline points="1180,715 1020,715 1020,640" fill="none" stroke="#ca2c35" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="1180" cy="715" r="6" fill="#ca2c35"/>
+<polyline points="800,640 800,910" fill="none" stroke="#18212c" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="1180,770 1180,910" fill="none" stroke="#18212c" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="1180" cy="770" r="6" fill="#18212c"/>
+<polyline points="30,910 1180,910" fill="none" stroke="#18212c" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="30" cy="910" r="6" fill="#18212c"/>
+<circle cx="110" cy="910" r="6" fill="#18212c"/>
+<circle cx="800" cy="910" r="6" fill="#18212c"/>
+<circle cx="1180" cy="910" r="6" fill="#18212c"/>
+<text x="660" y="948" font-size="21" font-weight="700" text-anchor="middle" fill="#17283a">COMMON GROUND: ESP32 GND + driver GND + supply − + switch COM</text>
+<text x="850" y="805" font-size="20" font-weight="600" text-anchor="start" fill="#17283a">External +5 V feeds the driver.</text>
+<text x="850" y="838" font-size="20" font-weight="600" text-anchor="start" fill="#17283a">USB powers the ESP32-S3.</text>
+<text x="850" y="870" font-size="18" font-weight="400" text-anchor="start" fill="#516177">Keep the external +5 V off the GPIO pins.</text>
+<text x="60" y="998" font-size="18" font-weight="400" text-anchor="start" fill="#516177">Signal colors identify nets in this diagram; follow pin labels rather than jumper-wire colors.</text>
+<text x="60" y="1027" font-size="17" font-weight="400" text-anchor="start" fill="#516177">Breadboard rails/jumpers may join the common ground. Diagram is logical wiring, not a breadboard hole map.</text>
+</g>
+</svg>

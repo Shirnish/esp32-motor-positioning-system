@@ -19,3 +19,7 @@ I completed five-sample STATUS capture, elapsed timestamps, CSV export, typed re
 ## Mechanical assembly and documentation — November 2, 2026
 
 I received the mechanical parts, mounted the motor and arm, checked my roller switch contacts, and reported one press/release input cycle. I added short code comments and checked that executable behavior was unchanged. Automatic arm-triggered homing and measured repeatability remain the next milestones.
+
+## First learning prototype completed — November 10, 2026
+
+I closed the current scope after manual HOME stopping, one visual out-and-back return, and a reported hands-free arm-triggered stop using a taped switch. Final compilation and offline validation of the saved Python capture passed. I documented the mounting difficulties, actual tape fastening, proposed weight, and unmeasured behavior in the [completion record](COMPLETION.md) and [mechanical iteration notes](MECHANICAL_ITERATIONS.md). Further mounting changes and repeatability measurements are optional future work.

@@ -1,0 +1,33 @@
+Date: 2026-11-10 (America/New_York)
+Checkpoint: short target move and return after manual HOME
+Saved firmware SHA256: F0E0E3B27A6ACB67FF23596668558CA7FB0C677CA27E074AB09571E5B3ACD224
+The saved-source hash does not independently identify the flashed binary.
+
+Procedure context:
+After the successful manual HOME test, I was instructed to send 200, wait for
+completion, then send 0 and query STATUS, keeping the home switch released.
+
+Reported serial output:
+09:55:09.640 -> 200
+09:55:16.315 -> Received: 0
+09:55:16.315 -> Within target Range
+09:55:16.315 -> Movement scheduled
+09:55:17.283 -> 0
+09:55:24.715 -> Received: STATUS
+09:55:24.715 -> STATUS position=0 homed=1 mode=IDLE
+
+Reported physical observation:
+It returned to its starting angle.
+
+Interpretation:
+The excerpt starts with the 200 completion count; the 200 request and its
+admission/start time are not included. The following target 0 was accepted,
+completed at commanded zero, and retained the homed/idle state. I visually
+observed the arm return to its starting angle for this one out-and-back cycle.
+I have not measured angular error, missed steps, or repeated-cycle variation.
+No timing-accuracy conclusion is drawn from Serial Monitor timestamps.
+
+Result: PASS - reported post-HOME numeric return and visual return to the
+starting angle for this cycle. Automatic arm-triggered homing, a secured
+switch mount, and measured repeatability remain pending.
+No firmware/Python change or remotely initiated motion was performed.

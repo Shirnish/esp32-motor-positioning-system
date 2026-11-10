@@ -1,0 +1,83 @@
+Date: 2026-11-10 (America/New_York)
+Checkpoint: manual roller-switch HOME, step-limit guard, and rotation direction
+Saved firmware SHA256: F0E0E3B27A6ACB67FF23596668558CA7FB0C677CA27E074AB09571E5B3ACD224
+The saved-source hash does not independently identify the flashed binary.
+
+Reported serial output:
+09:44:20.401 -> Ready
+09:44:39.608 -> Received: STOP
+09:44:39.608 -> Stopped
+09:44:39.608 -> 0
+09:44:54.476 -> Received: HOME
+09:44:54.476 -> Homing requested
+09:44:57.061 -> Homing step limit reached
+09:45:26.740 -> Received: STATUS
+09:45:26.740 -> STATUS position=-256 homed=0 mode=IDLE
+09:45:29.413 -> Received: 0
+09:45:29.413 -> Home First
+09:45:29.413 -> -256
+09:45:57.957 -> Received: HOME
+09:45:57.957 -> Homing requested
+09:45:58.892 -> Home switch is pressed
+09:45:58.892 -> Homing Complete
+09:45:58.892 -> 0
+09:46:02.333 -> Home switch is unpressed
+09:46:11.597 -> Received: STATUS
+09:46:11.597 -> STATUS position=0 homed=1 mode=IDLE
+
+Reported physical observation:
+it rotates counterclockwise when it goes anywhere - and positive postiions rotate clockwise
+
+Follow-up question:
+During the second HOME attempt, did the shaft physically stop when you
+pressed the switch and stay still while you held it?
+
+Reported answer:
+I couldn’t clearly confirm that
+
+Interpretation:
+I observed rotation and reported counterclockwise decreasing-count motion
+and clockwise increasing-count motion in the test's top-view convention.
+The first HOME reached its step budget after a reported 2.585 seconds,
+retained commanded -256, remained unhomed/idle, and rejected numeric zero.
+The next HOME accepted a manual switch press 0.935 seconds after the request,
+reported completion and zero, then reported homed=1 and mode=IDLE.
+I could not clearly confirm physical stopping at the switch press or
+stillness while held. Those physical observations remain pending.
+Direction depends on the target relative to the current commanded count,
+rather than the absolute sign of the target.
+
+Result: PASS for reported serial step-budget/target guard and manual HOME
+reference assignment; rotation direction reported. Physical switch-stop
+observation, automatic arm-triggered contact, and repeatability remain pending.
+No firmware/Python edit or remotely initiated motion was performed.
+
+Follow-up run: physical stopping observed (2026-11-10)
+Saved firmware SHA256: F0E0E3B27A6ACB67FF23596668558CA7FB0C677CA27E074AB09571E5B3ACD224
+
+Reported serial output:
+09:52:36.194 -> Received: HOME
+09:52:36.194 -> Homing requested
+09:52:36.566 -> Home switch is pressed
+09:52:36.566 -> Homing Complete
+09:52:36.566 -> 0
+09:52:39.030 -> Home switch is unpressed
+09:52:48.236 -> Received: STATUS
+09:52:48.236 -> STATUS position=0 homed=1 mode=IDLE
+
+Reported physical observation:
+It stays still and just stops after switch press and release
+
+Updated interpretation:
+I observed the shaft stop at the manual switch press and remain still through
+release. The serial run reported Homing Complete and zero, then homed/idle
+STATUS after release. The reported press occurred 0.372 seconds after HOME
+admission; this is a command-to-press interval, not a measured stopping latency.
+This follow-up resolves the earlier uncertainty about physical stopping in
+this manual test. It does not establish automatic arm-triggered homing,
+return-to-zero accuracy, or repeatability of the mechanical fixture.
+
+Updated result: PASS - manual HOME reference assignment, physical stopping,
+and stillness through release for this reported run.
+Automatic arm-triggered contact and repeatability remain pending.
+No firmware/Python change or remotely initiated motion was performed.

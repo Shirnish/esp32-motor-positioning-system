@@ -1,0 +1,10 @@
+{
+  "date": "2026-11-10",
+  "scope": "Offline source/import and validation of the preserved November 2 hardware CSV; no serial connection opened",
+  "result": "PASS",
+  "records": 5,
+  "firmware_sha256": "f0e0e3b27a6acb67ff23596668558ca7fb0c677ca27e074ab09571e5b3acd224",
+  "python_sha256": "22acec033deda77f1808ac4619470a02bc8236e4389ff71d4e088f47bfebcd0b",
+  "csv_sha256": "08b07bbb6926306d314fce0dd97e61986cc49d621da24c7198f9c9a97ffc2741",
+  "fresh_hardware_run": false
+}

@@ -1,0 +1,51 @@
+Date: 2026-11-10 (America/New_York)
+Checkpoint: mechanical iteration 1 - tape fastening and reported contact
+
+Original report:
+Okay we are using tape to fasten down the switch.  The lever pressed the switch.
+
+Recorded observations:
+I used tape to fasten down the switch.
+I reported that the contacting lever/arm pressed the switch.
+
+Scope:
+The tape type, attachment surface, support height, and amount of retained
+movement have not been supplied. No added weight was confirmed in this update.
+No command transcript, Homing Complete response, or STATUS report accompanied
+the contact report. Physical stopping without holding the switch has not yet
+been explicitly confirmed for this taped arrangement.
+
+Result: TAPE FASTENING AND MECHANICAL CONTACT REPORTED.
+Hands-free HOME completion, stopping, and zero assignment remain to confirm.
+Repeatability and whether arm lift/body movement are resolved remain pending.
+No firmware/Python edit or remotely initiated motion was performed.
+
+Follow-up: first reported hands-free stopping result (2026-11-10)
+Saved firmware SHA256: F0E0E3B27A6ACB67FF23596668558CA7FB0C677CA27E074AB09571E5B3ACD224
+The saved-source hash does not independently identify the flashed binary.
+
+Physical confirmation:
+yes the motor stopped by itself.
+
+Reported serial output:
+15:55:41.112 -> Received: STATUS
+15:55:41.112 -> STATUS position=0 homed=1 mode=IDLE
+
+Context:
+I was asked whether the motor stopped on its own when the arm pressed the
+switch, with my hands off the switch, and I answered yes. My preceding report
+identified tape as the fastening and the motor arm as the contacting part.
+
+Updated interpretation:
+I reported successful hands-free stopping at arm-to-switch contact in this
+first taped arrangement. The supplied STATUS excerpt shows commanded zero,
+homed=1 and IDLE. The HOME request, Homing Complete message and zero-assignment
+transition were not included in this follow-up, so the preserved serial
+record is a post-contact state snapshot rather than a full HOME transcript.
+Tape type, final switch support height, weight use, remaining arm lift/body
+movement, repeated-cycle behavior and measured accuracy remain unreported.
+
+Updated result: PASS - first reported hands-free arm-triggered stop with
+post-contact zero/homed/idle STATUS. This is a functional iteration-1 result;
+a full operation transcript, repeated runs and measured repeatability remain
+follow-up work. No firmware/Python edit or remote motion command was performed.

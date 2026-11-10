@@ -1,12 +1,12 @@
 # ESP32-S3 Stepper Motor Positioning System
 
-I am building a bench system to control a 5 V 28BYJ-48 stepper motor with an ESP32-S3 and ULN2003 driver. I started with basic stepping and added serial commands, scheduled motion, stopping, home-input handling, and a Python STATUS logger.
+I built a bench prototype to control a 5 V 28BYJ-48 stepper motor with an ESP32-S3 and ULN2003 driver. I started with basic stepping and added serial commands, scheduled motion, stopping, home-input handling, and a Python STATUS logger.
 
-**In development — software milestones are tested; automatic arm-triggered homing and measured repeatability are pending.** Updated November 2, 2026.
+**Completed first learning prototype — November 10, 2026.** I closed the demonstrated firmware, Python client, and first taped-switch prototype scope. Rigid mounting and measured positioning accuracy/repeatability are optional future improvements. [Completion record](docs/COMPLETION.md).
 
-![My motor and shaft arm mounted on a plate during assembly](docs/images/motor-arm-assembly.jpg)
+![My motor and shaft arm mounted on a plate during assembly](docs/images/final-overview-20261110.jpg)
 
-The photo shows my assembly in progress. I have not yet verified repeatable homing with the arm operating a fixed switch.
+The photo shows the final first-prototype setup with the taped switch fixture. I reported an arm-triggered hands-free stop, followed by zero/homed/idle STATUS. Long-term retention and repeatability remain unmeasured.
 
 ## What I have working
 
@@ -21,6 +21,10 @@ The photo shows my assembly in progress. I have not yet verified repeatable homi
 Position is an **issued-step count**, not a measured shaft angle. The motor has no position feedback. A count can change without rotation if motor power is absent or the motor misses steps. Reset alone does not establish a physical home.
 
 ## Hardware and wiring
+
+[Wiring diagram and final photos](docs/WIRING.md).
+
+![Logical wiring diagram](docs/images/motor-wiring.svg)
 
 | Part | My setup |
 | --- | --- |
@@ -70,13 +74,13 @@ I set `PORT` near the top of [status_client.py](pc/status_client.py) to the boar
 
 The client writes time-stamped files under pc/logs regardless of the terminal's working directory. It closes the serial port even when sample collection fails. Expected serial, timeout, parsing, and file errors print an error and exit with code 1. The client only requests STATUS; it does not run HOME or move the motor.
 
-## Testing and next steps
+## Testing and completed scope
 
 My [test notes](docs/TESTING.md) distinguish earlier firmware runs, simulated Python checks, real serial I/O, and physical observations. The Python client passed 58 offline/simulated checks and a real five-sample capture with CSV readback and exit code 0. The [sample CSV](docs/evidence/status-samples-20261102.csv) contains that recorded run.
 
 I added short source comments before publication. The C++ executable tokens and Python syntax tree were unchanged; [the comparison record](docs/evidence/source-comments-20261102.json) links the commented source to its earlier tested revision. I have not rerun all hardware tests on this snapshot.
 
-Next I will secure the roller switch, test arm-triggered homing, check clearance, and measure repeatability. Loaded supply voltage, motor current, electrical coil release, step timing, and response latency also remain to be measured.
+I closed the first prototype after manual HOME/physical-stop tests, one visual 200-to-0 return, and a reported hands-free arm-triggered stop using tape fastening. The supplied taped-switch excerpt shows final STATUS rather than a full HOME transition. My [completion record](docs/COMPLETION.md) and [mechanical iteration notes](docs/MECHANICAL_ITERATIONS.md) preserve the scope, DIY work, and limitations. Rigid support, arm-retention improvements, measured repeatability, loaded voltage/current, electrical coil release, and timing are optional extensions.
 
 ## References and progress
 

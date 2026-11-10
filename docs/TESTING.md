@@ -28,6 +28,18 @@ I replaced local machine paths with placeholders in the publication copies of lo
 
 The 58 Python checks cover protocol parsing, CSV loading, batch validation, and integrated normal/error paths using simulated serial/time and temporary files. Five initial cases hit a recorder issue involving Python 3.14 FrameLocalsProxy; after correcting only the recorder I reran those five, yielding 58 distinct passes. The real capture separately verified serial I/O, five saved samples, typed readback, closure, and exit 0.
 
-## Remaining physical tests
+## November 10 completion checkpoint
 
-I still need to verify automatic arm-triggered homing with a secured switch, repeatability, missed steps, shaft-angle accuracy, load behavior, and electrical/timing measurements. A manual switch press establishes a temporary software reference only. In a later bench attempt, I found the external motor supply unplugged from the wall; powered recovery and a fresh home test have not yet been reported.
+I completed a manual HOME test with physical stopping and stillness through release, then one 200-to-0 move with a visual return to the starting angle. I taped down the switch and confirmed that the arm pressed it and the motor stopped by itself with my hands off it. Following STATUS showed position=0 homed=1 mode=IDLE. The full taped-switch HOME request/completion transcript was not supplied.
+
+The final sketch compiled with exit 0, using 305346 bytes of program storage and 22232 bytes of global-variable memory. The current Python source imported and reloaded/validated the preserved five-row hardware CSV. These closeout checks did not open a port or run new hardware tests.
+
+- [Manual HOME and physical stop](evidence/manual-home-and-direction-20261110.log).
+- [One visual return](evidence/manual-home-return-20261110.log).
+- [Taped-switch contact and hands-free confirmation](evidence/taped-switch-contact-20261110.log).
+- [Final compilation](evidence/closeout-firmware-compile-20261110.log) and [offline CSV validation](evidence/closeout-offline-check-20261110.json).
+- [Completed scope and limitations](COMPLETION.md).
+
+## Optional future measurements
+
+Rigid mounting, arm lift/body movement, full transition capture, repeated-cycle behavior, angular accuracy, missed steps, load behavior, and electrical/timing measurements are optional extensions. The completed scope is a learning prototype with commanded-step accounting and a first functional taped fixture.

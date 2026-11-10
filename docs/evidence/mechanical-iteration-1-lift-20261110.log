@@ -1,0 +1,38 @@
+Date: 2026-11-10 (America/New_York)
+Checkpoint: first mechanical iteration - switch height and contact lift
+
+Original report and documentation request:
+Okay I need to set up the switch to sit a little higher, and i need to put weight ontop of the lever that hitting the switch since the physical contact with the switch bumps it up. I want you to make note of this but we could phrase it as the first iteration and if we work on this after our first test works(without me holding down the switch. That we could come up with better implementation. We could also state what troubles we ran into the physial implementation and DIY's that we made to get it to a functional state
+
+Reported observations:
+I need a higher switch position.
+Physical contact causes unwanted upward movement.
+I proposed added weight on the contacting part to hold it down.
+
+Evidence limits:
+The exact part lifting and source of movement have not yet been confirmed.
+No material, weight, fastening method, installed modification, or new serial
+transcript was supplied with this report. It does not establish whether the
+observation occurred during a powered HOME attempt or during contact setup.
+Added weight remains a proposed experiment, not a demonstrated correction.
+
+Iteration goal:
+I want the first arm-triggered HOME test to work without me holding the switch.
+After that functional first iteration, I can improve the implementation.
+I want to preserve the mechanical problems, DIY modifications, test results,
+and reasons for later changes as part of the project documentation.
+
+Result: ITERATION 1 ADJUSTMENTS PENDING.
+Earlier manual HOME/physical stopping and one visual return remain recorded
+passes. Hands-free arm-triggered HOME and measured repeatability remain pending.
+No firmware/Python edit or remotely initiated motion was performed.
+
+Follow-up clarification:
+The silver arm lifts and the switch body moves a little, sincet he arm is trying to move foward
+
+Updated interpretation:
+I identified two movements at contact: the silver arm lifts and the switch
+body shifts. The source of the arm lift remains unverified. I will check the
+switch height/support fastening and the arm-to-shaft attachment before
+assessing a temporary weight experiment. No installed weight, successful
+hands-free HOME, or repeatability result has been reported.
